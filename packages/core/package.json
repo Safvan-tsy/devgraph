@@ -1,0 +1,40 @@
+{
+  "name": "@devgraph/core",
+  "version": "0.1.0",
+  "description": "Core library for fetching and normalizing developer contributions across platforms",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "github",
+    "gitlab",
+    "contributions",
+    "api",
+    "developer-activity"
+  ],
+  "author": "safvan",
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {},
+  "publishConfig": {
+    "access": "public"
+  }
+}

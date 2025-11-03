@@ -1,0 +1,36 @@
+{
+  "name": "devgraph-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cross-platform developer contribution visualization library",
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "dev": "npm run dev --workspace=examples/react-demo",
+    "lint": "eslint . --ext .ts,.tsx",
+    "clean": "rm -rf packages/*/dist examples/*/dist node_modules packages/*/node_modules examples/*/node_modules",
+    "publish:core": "npm publish --workspace=packages/core --access public",
+    "publish:react": "npm publish --workspace=packages/react --access public"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.54.0",
+    "typescript": "^5.3.2"
+  },
+  "keywords": [
+    "github",
+    "gitlab",
+    "contributions",
+    "visualization",
+    "heatmap",
+    "developer",
+    "activity"
+  ],
+  "author": "safvan",
+  "license": "MIT"
+}
