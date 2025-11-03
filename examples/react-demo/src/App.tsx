@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContributionGraph, type DevGraphConfig, type ThemeName } from '@devgraph/react';
+import { ContributionGraph, type DevGraphConfig, type ThemeName } from 'devgraph-react';
 
 function App() {
   const [githubUsername, setGithubUsername] = useState('torvalds');

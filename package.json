@@ -10,10 +10,10 @@
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "dev": "npm run dev --workspace=examples/react-demo",
-    "lint": "eslint . --ext .ts,.tsx",
+    "lint": "npm run lint",
     "clean": "rm -rf packages/*/dist examples/*/dist node_modules packages/*/node_modules examples/*/node_modules",
-    "publish:core": "npm publish --workspace=packages/core --access public",
-    "publish:react": "npm publish --workspace=packages/react --access public"
+    "publish:core": "cd packages/core && npm publish --access public",
+    "publish:react": "cd packages/react && npm publish --access public"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",

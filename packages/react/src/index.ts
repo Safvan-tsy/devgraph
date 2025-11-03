@@ -9,4 +9,4 @@ export type {
   GitHubConfig,
   GitLabConfig,
   ThemeName,
-} from '@devgraph/core';
+} from 'devgraph-core';

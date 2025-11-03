@@ -1,5 +1,5 @@
 {
-  "name": "@devgraph/react",
+  "name": "devgraph-react",
   "version": "0.1.0",
   "description": "React components for visualizing developer contributions",
   "type": "module",
@@ -31,12 +31,21 @@
   ],
   "author": "safvan",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Safvan-tsy/devgraph.git",
+    "directory": "packages/react"
+  },
+  "homepage": "https://github.com/Safvan-tsy/devgraph#readme",
+  "bugs": {
+    "url": "https://github.com/Safvan-tsy/devgraph/issues"
+  },
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
   "dependencies": {
-    "@devgraph/core": "*",
+    "devgraph-core": "*",
     "clsx": "^2.0.0"
   },
   "devDependencies": {

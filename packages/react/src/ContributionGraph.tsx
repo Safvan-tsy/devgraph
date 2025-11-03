@@ -8,7 +8,7 @@ import {
   getColorLevel,
   fillMissingDates,
   getLastYear,
-} from '@devgraph/core';
+} from 'devgraph-core';
 import clsx from 'clsx';
 
 export interface ContributionGraphProps {

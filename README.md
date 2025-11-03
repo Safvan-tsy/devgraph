@@ -2,9 +2,9 @@
 
 > Cross-platform developer contribution visualization library
 
-[![npm version](https://img.shields.io/npm/v/@devgraph/core.svg)](https://www.npmjs.com/package/@devgraph/core)
+[![npm version](https://img.shields.io/npm/v/devgraph-core.svg)](https://www.npmjs.com/package/devgraph-core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![CI/CD](https://github.com/safvan/devgraph/workflows/CI%2FCD/badge.svg)](https://github.com/safvan/devgraph/actions)
+[![CI/CD](https://github.com/Safvan-tsy/devgraph/workflows/CI%2FCD/badge.svg)](https://github.com/Safvan-tsy/devgraph/actions)
 
 DevGraph is a modern TypeScript library that aggregates and visualizes developer contributions from multiple platforms (GitHub, GitLab, and more) into a unified contribution graph.
 
@@ -25,21 +25,21 @@ DevGraph is a modern TypeScript library that aggregates and visualizes developer
 
 | Package | Version | Description |
 |---------|---------|-------------|
-| [@devgraph/core](./packages/core) | ![npm](https://img.shields.io/npm/v/@devgraph/core) | Core API client (framework-agnostic) |
-| [@devgraph/react](./packages/react) | ![npm](https://img.shields.io/npm/v/@devgraph/react) | React components |
+| [devgraph-core](./packages/core) | ![npm](https://img.shields.io/npm/v/devgraph-core) | Core API client (framework-agnostic) |
+| [devgraph-react](./packages/react) | ![npm](https://img.shields.io/npm/v/devgraph-react) | React components |
 
 ## 🚀 Quick Start
 
 ### Installation
 
 ```bash
-npm install @devgraph/react @devgraph/core
+npm install devgraph-react devgraph-core
 ```
 
 ### Basic Usage
 
 ```tsx
-import { ContributionGraph } from '@devgraph/react';
+import { ContributionGraph } from 'devgraph-react';
 
 function App() {
   return (
@@ -58,10 +58,10 @@ function App() {
 
 ### Core Library
 
-The `@devgraph/core` package provides framework-agnostic utilities for fetching and normalizing contribution data.
+The `devgraph-core` package provides framework-agnostic utilities for fetching and normalizing contribution data.
 
 ```typescript
-import { getContributions } from '@devgraph/core';
+import { getContributions } from 'devgraph-core';
 
 const contributions = await getContributions({
   github: { 
@@ -78,7 +78,7 @@ const contributions = await getContributions({
 
 ### React Components
 
-The `@devgraph/react` package provides ready-to-use React components.
+The `devgraph-react` package provides ready-to-use React components.
 
 ```tsx
 <ContributionGraph
@@ -163,8 +163,8 @@ npm run dev
 ```
 devgraph/
 ├── packages/
-│   ├── core/          # @devgraph/core
-│   └── react/         # @devgraph/react
+│   ├── core/          # devgraph-core
+│   └── react/         # devgraph-react
 ├── examples/
 │   └── react-demo/    # Vite + React demo
 └── .github/
@@ -213,9 +213,8 @@ MIT © safvan
 
 ## 💬 Support
 
-- 📫 **Issues**: [GitHub Issues](https://github.com/safvan/devgraph/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/safvan/devgraph/discussions)
-- 📧 **Email**: support@devgraph.dev
+- 📫 **Issues**: [GitHub Issues](https://github.com/Safvan-tsy/devgraph/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/Safvan-tsy/devgraph/discussions)
 
 ---
 

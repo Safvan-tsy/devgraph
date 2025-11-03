@@ -1,4 +1,4 @@
-# @devgraph/core
+# devgraph-core
 
 Core library for fetching and normalizing developer contributions across multiple platforms.
 
@@ -14,13 +14,13 @@ Core library for fetching and normalizing developer contributions across multipl
 ## Installation
 
 ```bash
-npm install @devgraph/core
+npm install devgraph-core
 ```
 
 ## Quick Start
 
 ```typescript
-import { getContributions } from '@devgraph/core';
+import { getContributions } from 'devgraph-core';
 
 const contributions = await getContributions({
   github: { 
@@ -67,7 +67,7 @@ Same as `getContributions` but with 30-minute in-memory cache.
 ### Themes
 
 ```typescript
-import { themes, getTheme, getColorLevel } from '@devgraph/core';
+import { themes, getTheme, getColorLevel } from 'devgraph-core';
 
 const darkTheme = getTheme('dark');
 const level = getColorLevel(5); // Returns 0-4 or -1 for empty
@@ -81,7 +81,7 @@ import {
   filterByDateRange,
   fillMissingDates,
   getLastYear 
-} from '@devgraph/core';
+} from 'devgraph-core';
 
 const merged = mergeContributions(githubData, gitlabData);
 const lastYear = getLastYear();

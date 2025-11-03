@@ -16,8 +16,8 @@ DevGraph is a modular TypeScript library for visualizing cross-platform develope
 
 ## Architecture
 - Monorepo using npm workspaces
-- `@devgraph/core`: Framework-agnostic API client (GitHub & GitLab)
-- `@devgraph/react`: React component with Tailwind CSS
+- `devgraph-core`: Framework-agnostic API client (GitHub & GitLab)
+- `devgraph-react`: React component with Tailwind CSS
 - `examples/react-demo`: Vite + React demo application
 - Modern TypeScript with ES modules
 

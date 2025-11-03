@@ -9,7 +9,7 @@ Your DevGraph monorepo is fully configured and ready to use. All packages have b
 ```
 devgraph/
 ├── packages/
-│   ├── core/              # @devgraph/core - Platform API client
+│   ├── core/              # devgraph-core - Platform API client
 │   │   ├── src/
 │   │   │   ├── api.ts         # Main API functions
 │   │   │   ├── github.ts      # GitHub integration
@@ -19,7 +19,7 @@ devgraph/
 │   │   │   └── utils.ts       # Utility functions
 │   │   └── dist/          # Build output
 │   │
-│   └── react/             # @devgraph/react - React components
+│   └── react/             # devgraph-react - React components
 │       ├── src/
 │       │   ├── ContributionGraph.tsx  # Main component
 │       │   └── index.ts
@@ -70,7 +70,7 @@ npm run publish:react
 
 ## 🔑 Key Features Implemented
 
-### @devgraph/core
+### devgraph-core
 - ✅ GitHub API integration (GraphQL)
 - ✅ GitLab API integration (REST)
 - ✅ Contribution data normalization
@@ -80,7 +80,7 @@ npm run publish:react
 - ✅ Full TypeScript support
 - ✅ Zero dependencies
 
-### @devgraph/react
+### devgraph-react
 - ✅ ContributionGraph component
 - ✅ Theme support
 - ✅ Customizable sizing
@@ -158,12 +158,12 @@ For private repositories or higher rate limits:
 
 ### Installation
 ```bash
-npm install @devgraph/react @devgraph/core
+npm install devgraph-react devgraph-core
 ```
 
 ### Basic Usage
 ```tsx
-import { ContributionGraph } from '@devgraph/react';
+import { ContributionGraph } from 'devgraph-react';
 
 function MyWebsite() {
   return (

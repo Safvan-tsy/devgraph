@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@devgraph/core": "*",
-    "@devgraph/react": "*",
+    "devgraph-core": "*",
+    "devgraph-react": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

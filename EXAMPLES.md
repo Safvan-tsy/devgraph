@@ -5,7 +5,7 @@
 ### Basic Usage
 
 ```typescript
-import { getContributions } from '@devgraph/core';
+import { getContributions } from 'devgraph-core';
 
 // Fetch GitHub contributions
 const contributions = await getContributions({
@@ -23,7 +23,7 @@ console.log(contributions);
 ### Multiple Platforms
 
 ```typescript
-import { getContributions } from '@devgraph/core';
+import { getContributions } from 'devgraph-core';
 
 const contributions = await getContributions({
   github: { 
@@ -42,7 +42,7 @@ const contributions = await getContributions({
 ### Date Range Filtering
 
 ```typescript
-import { getContributions } from '@devgraph/core';
+import { getContributions } from 'devgraph-core';
 
 const lastMonth = new Date();
 lastMonth.setMonth(lastMonth.getMonth() - 1);
@@ -59,7 +59,7 @@ const contributions = await getContributions({
 ### Using Cache
 
 ```typescript
-import { getCachedContributions } from '@devgraph/core';
+import { getCachedContributions } from 'devgraph-core';
 
 // Same API, but results are cached for 30 minutes
 const contributions = await getCachedContributions({
@@ -70,7 +70,7 @@ const contributions = await getCachedContributions({
 ### Platform-Specific Fetching
 
 ```typescript
-import { fetchGitHubContributions, fetchGitLabContributions } from '@devgraph/core';
+import { fetchGitHubContributions, fetchGitLabContributions } from 'devgraph-core';
 
 // GitHub only
 const githubData = await fetchGitHubContributions('octocat', 'ghp_token');
@@ -95,7 +95,7 @@ import {
   fillMissingDates,
   getLastYear,
   getLastNDays
-} from '@devgraph/core';
+} from 'devgraph-core';
 
 // Merge multiple datasets
 const github = await fetchGitHubContributions('user1');
@@ -116,7 +116,7 @@ const { start: start90, end: end90 } = getLastNDays(90);
 ### Themes
 
 ```typescript
-import { themes, getTheme, getColorLevel } from '@devgraph/core';
+import { themes, getTheme, getColorLevel } from 'devgraph-core';
 
 // Get all themes
 console.log(themes);
@@ -141,7 +141,7 @@ const level = getColorLevel(15);  // 4 (10+ contributions)
 ### Basic Usage
 
 ```tsx
-import { ContributionGraph } from '@devgraph/react';
+import { ContributionGraph } from 'devgraph-react';
 
 function App() {
   return (
@@ -226,7 +226,7 @@ function App() {
 
 ```tsx
 import { useState } from 'react';
-import { ContributionGraph, DevGraphConfig } from '@devgraph/react';
+import { ContributionGraph, DevGraphConfig } from 'devgraph-react';
 
 function DynamicGraph() {
   const [username, setUsername] = useState('octocat');
@@ -296,7 +296,7 @@ function ThemeShowcase() {
 // app/page.tsx (App Router)
 'use client';
 
-import { ContributionGraph } from '@devgraph/react';
+import { ContributionGraph } from 'devgraph-react';
 
 export default function Home() {
   return (
@@ -313,7 +313,7 @@ export default function Home() {
 
 ```tsx
 // pages/index.tsx (Pages Router)
-import { ContributionGraph } from '@devgraph/react';
+import { ContributionGraph } from 'devgraph-react';
 
 export default function Home() {
   return (
@@ -337,7 +337,7 @@ import type {
   ThemeName,
   ContributionData,
   ContributionDay
-} from '@devgraph/react';
+} from 'devgraph-react';
 
 // Use in your components
 const MyComponent: React.FC<ContributionGraphProps> = (props) => {
@@ -361,7 +361,7 @@ const processContributions = (data: ContributionData): number => {
 ### Custom Data Processing
 
 ```typescript
-import { getContributions } from '@devgraph/core';
+import { getContributions } from 'devgraph-core';
 
 const contributions = await getContributions({
   github: { username: 'octocat' }
@@ -403,7 +403,7 @@ const longestStreak = calculateStreak(contributions);
 ### Rate Limit Handling
 
 ```typescript
-import { getContributions } from '@devgraph/core';
+import { getContributions } from 'devgraph-core';
 
 async function fetchWithRetry(config: DevGraphConfig, retries = 3) {
   try {
@@ -464,7 +464,7 @@ NEXT_PUBLIC_GITLAB_TOKEN=glpat_your_token_here
 ### Mock Data
 
 ```typescript
-import type { ContributionData } from '@devgraph/core';
+import type { ContributionData } from 'devgraph-core';
 
 const mockContributions: ContributionData = [
   { date: '2024-01-01', count: 5 },

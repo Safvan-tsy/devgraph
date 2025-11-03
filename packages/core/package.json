@@ -1,5 +1,5 @@
 {
-  "name": "@devgraph/core",
+  "name": "devgraph-core",
   "version": "0.1.0",
   "description": "Core library for fetching and normalizing developer contributions across platforms",
   "type": "module",
@@ -29,6 +29,15 @@
   ],
   "author": "safvan",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Safvan-tsy/devgraph.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/Safvan-tsy/devgraph#readme",
+  "bugs": {
+    "url": "https://github.com/Safvan-tsy/devgraph/issues"
+  },
   "devDependencies": {
     "tsup": "^8.0.1",
     "typescript": "^5.3.2"

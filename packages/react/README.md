@@ -1,4 +1,4 @@
-# @devgraph/react
+# devgraph-react
 
 React components for visualizing developer contributions across platforms.
 
@@ -14,13 +14,13 @@ React components for visualizing developer contributions across platforms.
 ## Installation
 
 ```bash
-npm install @devgraph/react @devgraph/core
+npm install devgraph-react devgraph-core
 ```
 
 ## Quick Start
 
 ```tsx
-import { ContributionGraph } from '@devgraph/react';
+import { ContributionGraph } from 'devgraph-react';
 
 function App() {
   return (
