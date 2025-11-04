@@ -103,6 +103,23 @@ You can also create custom themes by extending the theme system.
 
 ## 🔐 Authentication
 
+### Do I Need Tokens?
+
+**Short answer: NO!** Tokens are optional.
+
+**Without tokens:**
+- ✅ Works with all public GitHub profiles
+- ✅ Works with all public GitLab profiles  
+- ✅ Fetches last ~300 events from each platform
+- ✅ No setup required
+
+**With tokens (optional):**
+- 📈 Higher rate limits (5,000/hour vs 60/hour)
+- 🔒 Access to private repository contributions
+- 📊 More complete data (GraphQL for GitHub)
+
+### Setup (Optional)
+
 ### GitHub
 
 1. Go to https://github.com/settings/tokens

@@ -34,24 +34,34 @@ export async function fetchGitLabContributions(
 
     const userId = users[0].id;
 
-    // Fetch events (last 100 by default)
-    const eventsResponse = await fetch(
-      `${baseUrl}/api/v4/users/${userId}/events?per_page=100`,
-      { headers }
-    );
-
-    if (!eventsResponse.ok) {
-      throw new Error(`GitLab API error: ${eventsResponse.status} ${eventsResponse.statusText}`);
-    }
-
-    const events = await eventsResponse.json();
-
-    // Group events by date
+    // Fetch events from multiple pages to get more data
+    // GitLab allows up to 100 per page, we'll fetch multiple pages
     const contributionMap = new Map<string, number>();
+    const maxPages = 10; // Fetch up to 1000 events
+    
+    for (let page = 1; page <= maxPages; page++) {
+      const eventsResponse = await fetch(
+        `${baseUrl}/api/v4/users/${userId}/events?per_page=100&page=${page}`,
+        { headers }
+      );
 
-    for (const event of events) {
-      const date = event.created_at.split('T')[0]; // Extract YYYY-MM-DD
-      contributionMap.set(date, (contributionMap.get(date) || 0) + 1);
+      if (!eventsResponse.ok) {
+        throw new Error(`GitLab API error: ${eventsResponse.status} ${eventsResponse.statusText}`);
+      }
+
+      const events = await eventsResponse.json();
+      
+      // Stop if no more events
+      if (events.length === 0) break;
+
+      // Group events by date
+      for (const event of events) {
+        const date = event.created_at.split('T')[0]; // Extract YYYY-MM-DD
+        contributionMap.set(date, (contributionMap.get(date) || 0) + 1);
+      }
+      
+      // If we got less than 100, we've reached the end
+      if (events.length < 100) break;
     }
 
     // Convert to ContributionData format

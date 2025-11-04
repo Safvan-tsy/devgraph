@@ -22,10 +22,11 @@ npm install devgraph-core
 ```typescript
 import { getContributions } from 'devgraph-core';
 
+// Works without token for public data!
 const contributions = await getContributions({
   github: { 
-    username: 'octocat',
-    token: 'ghp_...' // Optional, for private repos
+    username: 'octocat'
+    // token: 'ghp_...' // Optional - only needed for private repos or higher rate limits
   },
   gitlab: { 
     username: 'gitlab-user' 
@@ -90,9 +91,31 @@ const filtered = filterByDateRange(contributions, lastYear.start, lastYear.end);
 
 ## Authentication
 
+### When do you need a token?
+
+**You DON'T need a token for:**
+- ✅ Public GitHub profiles
+- ✅ Public GitLab profiles
+- ✅ Basic contribution data
+
+**You NEED a token for:**
+- 🔒 Private repositories
+- 📈 Higher API rate limits (5,000/hour vs 60/hour for GitHub)
+- 📊 More accurate data (GraphQL API for GitHub)
+
 ### GitHub
 
-Create a personal access token at https://github.com/settings/tokens with `read:user` scope.
+**Without Token (Public REST API):**
+- Works for all public profiles
+- Fetches last ~300 public events
+- Rate limit: 60 requests/hour
+
+**With Token (GraphQL API):**
+1. Go to https://github.com/settings/tokens
+2. Generate token with `read:user` scope
+3. Pass it to the config
+
+**Rate limit: 5,000 requests/hour**
 
 ### GitLab
 

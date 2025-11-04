@@ -2,18 +2,25 @@ import React, { useState } from 'react';
 import { ContributionGraph, type DevGraphConfig, type ThemeName } from 'devgraph-react';
 
 function App() {
-  const [githubUsername, setGithubUsername] = useState('torvalds');
-  const [gitlabUsername, setGitlabUsername] = useState('');
+  const [githubUsername, setGithubUsername] = useState('Safvan-tsy');
+  const [gitlabUsername, setGitlabUsername] = useState('safvan.armino');
   const [githubToken, setGithubToken] = useState('');
   const [theme, setTheme] = useState<ThemeName>('github');
+  const [dateRange, setDateRange] = useState<'30' | '90' | '180' | '365'>('365');
   const [config, setConfig] = useState<DevGraphConfig>({
-    github: { username: 'torvalds' },
+    github: { username: 'Safvan-tsy' },
+    gitlab: { username: 'safvan.armino' },
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     const newConfig: DevGraphConfig = {};
+    
+    // Calculate date range
+    const end = new Date();
+    const start = new Date();
+    start.setDate(start.getDate() - parseInt(dateRange));
 
     if (githubUsername) {
       newConfig.github = {
@@ -27,6 +34,8 @@ function App() {
         username: gitlabUsername,
       };
     }
+
+    newConfig.dateRange = { start, end };
 
     setConfig(newConfig);
   };
@@ -130,6 +139,35 @@ function App() {
               </div>
             </div>
 
+            {/* Date Range Selector */}
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Date Range
+              </label>
+              <div className="flex gap-4 flex-wrap">
+                {[
+                  { value: '30', label: 'Last 30 days' },
+                  { value: '90', label: 'Last 3 months' },
+                  { value: '180', label: 'Last 6 months' },
+                  { value: '365', label: 'Last year' },
+                ].map((range) => (
+                  <label key={range.value} className="flex items-center cursor-pointer">
+                    <input
+                      type="radio"
+                      name="dateRange"
+                      value={range.value}
+                      checked={dateRange === range.value}
+                      onChange={(e) => setDateRange(e.target.value as any)}
+                      className="mr-2"
+                    />
+                    <span className="text-gray-700 dark:text-gray-300">
+                      {range.label}
+                    </span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
             {/* Submit Button */}
             <button
               type="submit"
@@ -178,8 +216,13 @@ function App() {
           <p className="mb-2">
             Built with <span className="text-red-500">♥</span> using DevGraph
           </p>
-          <p className="text-sm">
+          <p className="text-sm mb-2">
             Supports GitHub and GitLab • More platforms coming soon
+          </p>
+          <p className="text-xs text-gray-500 dark:text-gray-500">
+            💡 Tip: Tokens are optional! Public data works without authentication.
+            <br />
+            Add a token for private repos and higher rate limits.
           </p>
         </div>
       </div>
